@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerte o Caminho</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagens/icon.png">
+</head>
+<body>
+
+    <!-- TELA PRINCIPAL DO JOGO -->
+    <div class="container" id="game-container">
+        <div class="content">
+
+            <!--  ÍCONE DE INFORMAÇÃO -->
+            <div class="info-container">
+                <span class="info-icon">ℹ️</span>
+                <div class="info-box">
+                    <h3>🗡️ A Lenda da Espada de Koaland 🏆</h3>
+                    <p>Há muito tempo, a lendária espada de Koaland foi roubada pelo terrível Dragão Sombrio. 
+                    Apenas um bravo aventureiro poderá encontrá-la e derrotar os desafios da dungeon! 
+                    Escolha bem seus caminhos e ajude o Coala nessa jornada épica! 🐨⚔️</p>
+                </div>
+            </div>
+
+            <!-- TÍTULO DO JOGO -->
+            <h1>🐨 ENCONTRE O CAMINHO CERTO ⚔️</h1>
+            <h2>🔥 Escolha sua entrada da dungeon! 🔥</h2>
+            <h3 id="rodada-texto">Rodada 1</h3>
+
+            <!-- ESCOLHA DE PORTAS -->
+            <div class="dungeon-choices">
+                <div class="coala-container">
+                    <img class="coala-img coala-esquerda" src="imagens/coala-base.png" alt="Coala">
+                </div>
+
+                <button class="dungeon-btn" onclick="escolherCaminho(0)">
+                    <img class="dungeon-door" src="imagens/dungeon-closed.png" alt="Dungeon Fechada">
+                </button>
+
+                <button class="dungeon-btn" onclick="escolherCaminho(1)">
+                    <img class="dungeon-door" src="imagens/dungeon-closed.png" alt="Dungeon Fechada">
+                </button>
+
+                <button class="dungeon-btn" onclick="escolherCaminho(2)">
+                    <img class="dungeon-door" src="imagens/dungeon-closed.png" alt="Dungeon Fechada">
+                </button>
+
+                <div class="coala-container">
+                    <img class="coala-img" src="imagens/coala-base.png" alt="Coala">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DE VITÓRIA -->
+    <div class="overlay" id="tela-vitoria">
+        <div class="mensagem">
+            <h2>🎉 Parabéns! Você encontrou um goblin!</h2>
+            <h2>e conseguiu vencer! ⚔️</h2>
+            <div class="resultado">
+                <img src="imagens/coala-win.png" alt="Coala Vencedor">
+                <img src="imagens/globin-loser.png" alt="Goblin Perdedor">
+            </div>
+            <button onclick="continuarJogo()">➡️ Continuar</button>
+        </div>
+    </div>
+
+    <!-- TELA DE DERROTA -->
+    <div class="overlay" id="tela-derrota">
+        <div class="mensagem">
+            <h2>💀 Você encontrou um dragão e perdeu! 🐉</h2>
+            <div class="resultado">
+                <img src="imagens/coala-loser.png" alt="Coala Perdedor">
+                <img src="imagens/dragao.png" alt="Dragão">
+            </div>
+            <button onclick="reiniciarJogo()">🔄 Tentar Novamente</button>
+        </div>
+    </div>
+
+    <!-- TELA DE RECOMPENSA FINAL -->
+    <div class="overlay" id="tela-recompensa">
+        <div class="mensagem">
+            <h2>🎉 Você conseguiu chegar ao final do jogo!</h2>
+            <h2>Agora pegue sua recompensa! 🏆</h2>
+            <div class="resultado">
+                <img src="imagens/coala-win.png" alt="Coala Comemorando">
+                <img src="imagens/bau-open.png" alt="Baú Aberto">
+            </div>
+            <button onclick="mostrarTelaFinal()">🗡️ Pegar!</button>
+        </div>
+    </div>
+
+    <!-- TELA FINAL DO JOGO -->
+    <div class="overlay" id="tela-vitoria-final">
+        <div class="mensagem">
+            <h2>🏆 Obrigado por ajudar o Coala a pegar </h2>
+            <h2>a espada lendária de Koaland! 🏆</h2>
+            <div class="resultado">
+                <img src="imagens/coala-win-sword.png" alt="Coala com Espada">
+            </div>
+            <button onclick="reiniciarJogo()">🔄 Recomeçar</button>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        🛡️ Feito por <a href="https://github.com/gabrielgsantana" target="_blank">Gabriel Santana</a> | 
+         inspirado na Imersão
+        <a href="https://www.alura.com.br/" target="_blank">ALURA</a> <span class="ano-footer">2025</span> ⚔️
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
